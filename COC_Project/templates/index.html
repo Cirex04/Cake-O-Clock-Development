@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %} Cake O' Clock Cafe {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap.rtl.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap-grid.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap-grid.rtl.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap-reboot.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap-reboot.rtl.css' %}" />
+    <link rel="stylesheet" href="{% static 'css\bootstrap-utilities.css' %}" />
+    <link rel="shortcut icon" href="{% static 'media\favico.ico' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css\bootstrap-utilities.rtl.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css\style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!--Home Page-->
+    <section id="home">
+      {% block navigation %}
+      <!--Home Navbar-->
+      <nav>
+        <a href="#">
+          <label class="logo"> Cake o' Clock Cafe </label>
+        </a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        <ul class="pages" id="main-nav">
+          <li class="home active">
+            <a onclick="checkClickFunc()" href="#">Home</a>
+          </li>
+          <li class="blog">
+            <a onclick="checkClickFunc()" href="#blog">Blog</a>
+          </li>
+          <li class="menu">
+            <a onclick="checkClickFunc()" href="#menu">Menu</a>
+          </li>
+          <li class="custom-pastries">
+            <a onclick="checkClickFunc()" href="#">Custom Pastries</a>
+          </li>
+          <li class="gallery">
+            <a onclick="checkClickFunc()" href="#">Gallery</a>
+          </li>
+          <li class="book-an-event">
+            <a onclick="checkClickFunc()" href="#">Book an Event</a>
+          </li>
+          <li class="contact-us">
+            <a onclick="checkClickFunc()" href="#">Contact Us</a>
+          </li>
+          <li class="hidden-logo">
+            <img src="{% static 'media\logo.png' %}" />
+            <br />
+            <label>Cake o' Clock Cafe</label>
+          </li>
+        </ul>
+        <ul class="socmed-icon">
+          <li>
+            <a href="https://www.facebook.com/cakeoclockcafe">
+              <img src="{% static 'media\fb.png' %}" />
+            </a>
+            <a href="https://www.instagram.com/cakeoclockcafe/">
+              <img src="{% static 'media\insta.png' %}" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Fixed Navbar & Mobile View Navbar-->
+      <nav class="fixed-navbar">
+        <div>
+          <a href="#">
+            <img src="{% static 'media\logo.png' %}" class="logo-pic" />
+            <label class="logo"> Cake o' Clock Cafe </label>
+          </a>
+          <input type="checkbox" id="check" />
+          <label for="check" class="open-menu">
+            <i class="fas fa-bars"> </i>
+          </label>
+        </div>
+        <ul class="pages-fixed" id="main-nav-2">
+          <li class="home active"><a href="#">Home</a></li>
+          <li class="blog"><a href="#blog">Blog</a></li>
+          <li class="menu"><a href="#menu">Menu</a></li>
+          <li class="custom-pastries"><a href="#">Custom Pastries</a></li>
+          <li class="gallery"><a href="#">Gallery</a></li>
+          <li class="book-an-event"><a href="#">Book an Event</a></li>
+          <li class="contact-us"><a href="#">Contact Us</a></li>
+          <li class="hidden-logo">
+            <img src="{% static 'media\logo.png' %}" />
+            <label class="logo">Cake o' Clock Cafe</label>
+          </li>
+        </ul>
+        <ul class="socmed-icon">
+          <li>
+            <a href="https://www.facebook.com/cakeoclockcafe">
+              <img src="{% static 'media\fb2.png' %}" />
+            </a>
+            <a href="https://www.instagram.com/cakeoclockcafe/">
+              <img src="{% static 'media\insta2.png' %}" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      {% endblock %} {% block content %}
+      <!--Main content of main page-->
+      <div>
+        <div class="welcome">
+          <ul>
+            <li>
+              <img class="home-logo" src="{% static 'media\logo-home.png' %}" />
+            </li>
+            <li><hr class="line" /></li>
+            <li><label>WWW.CAKE-O-CLOCK.COM</label></li>
+            <li>
+              <label>
+                #193 Calderon Street Barangay Poblacion, Balanga,Philippines
+              </label>
+            </li>
+          </ul>
+          <ul class="touch">
+            <li class="quote"><img src="{% static 'media\quote.png' %}" /></li>
+            <li>Welcome</li>
+          </ul>
+        </div>
+        <button class="chatbot-btn"></button>
+      </div>
+    </section>
+
+    <!--Blog Page-->
+    <section id="blog">
+      <div class="container-fluid">
+        <h1 class="pb-md-3">Blogs</h1>
+        <div class="row justify-content-center">
+          {% for blog in blogs %}
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-75">
+              <img src="{{blog.image.url}}" alt="" class="card-image img-fluid blog-image">
+              <a href="{% url 'article' blog.pk %}">
+              <div class="card-img-overlay">
+                <a href="{% url 'article' blog.pk %}" class="blog-link">
+                  <h5 class="card-title">{{blog.title}}</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <hr />
+      </div>
+    </section>
+
+    <!--Menu Page-->
+    <section id="menu">
+      <h1>Menu</h1>
+      <h2>
+        <ul class="categories">
+          <li class="silogs selected-category">
+            <button onclick="clickCategory('silogs')">Silog</button>
+          </li>
+          <li class="seperate-menu-category">|</li>
+          <li class="coffees">
+            <button onclick="clickCategory('coffees')">Coffee</button>
+          </li>
+          <li class="seperate-menu-category">|</li>
+          <li class="pastas">
+            <button onclick="clickCategory('pastas')">Pasta</button>
+          </li>
+          <li class="seperate-menu-category">|</li>
+          <li class="teas">
+            <button onclick="clickCategory('teas')">Tea/MilkTea</button>
+          </li>
+        </ul>
+      </h2>
+      <div id="menu-items">
+        <div class="container">
+          <!--Silogs-->
+          <div id="silogs">
+            {% for item in silogs%}
+            <div class="row">
+              <div class="col-sm">
+                <label
+                  class="menu-label-silog menu-label"
+                  id="label-silog-{{item.id}}"
+                >
+                  {{item}}
+                </label>
+              </div>
+              <div class="col-sm">
+                <img
+                  src="{{item.image.url}}"
+                  class="menu-image"
+                  id="image-silog-{{item.id}}"
+                  alt="menu-image"
+                />
+              </div>
+            </div>
+            <br />
+            {% endfor %}
+          </div>
+
+          <!--Coffees-->
+          <div id="coffees">
+            {% for item in coffees%}
+            <div class="row">
+              <div class="col-sm">
+                <label
+                  class="menu-label-coffee menu-label"
+                  id="label-coffee-{{item.id}}"
+                >
+                  {{item}}
+                </label>
+              </div>
+              <div class="col-sm">
+                <img
+                  src="{{item.image.url}}"
+                  class="menu-image"
+                  id="image-coffee-{{item.id}}"
+                  alt="menu-image"
+                />
+              </div>
+            </div>
+            <br />
+            {% endfor %}
+          </div>
+
+          <!--Pastas-->
+          <div id="pastas">
+            {% for item in pastas%}
+            <div class="row">
+              <div class="col-sm">
+                <label
+                  class="menu-label-pasta menu-label"
+                  id="label-pasta-{{item.id}}"
+                >
+                  {{item}}
+                </label>
+              </div>
+              <div class="col-sm">
+                <img
+                  src="{{item.image.url}}"
+                  class="menu-image"
+                  id="image-pasta-{{item.id}}"
+                  alt="menu-image"
+                />
+              </div>
+            </div>
+            <br />
+            {% endfor %}
+          </div>
+
+          <!--Teas/Milkteas-->
+          <div id="teas">
+            {% for item in teas%}
+            <div class="row">
+              <div class="col-sm">
+                <label
+                  class="menu-label-tea menu-label"
+                  id="label-tea-{{item.id}}"
+                >
+                  {{item}}
+                </label>
+              </div>
+              <div class="col-sm">
+                <img
+                  src="{{item.image.url}}"
+                  class="menu-image"
+                  id="image-tea-{{item.id}}"
+                  alt="menu-image"
+                />
+              </div>
+            </div>
+            <br />
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+  </body>
+</html>
+<script src="{% static 'js\app.js' %}"></script>

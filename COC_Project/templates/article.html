@@ -1,0 +1,89 @@
+{% extends 'index.html' %} 
+{% load static %} 
+
+{% block title %}Article{% endblock %}
+
+{% block navigation %}
+<!--Home Navbar-->
+<nav>
+  <a href="/">
+    <label class="logo"> Cake o' Clock Cafe </label>
+  </a>
+  <input type="checkbox" id="check" />
+  <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+  <ul class="pages" id="main-nav">
+    <li class="home active">
+      <a onclick="checkClickFunc()" href="/">Home</a>
+    </li>
+    <li class="blog">
+      <a onclick="checkClickFunc()" href="/#blog">Blog</a>
+    </li>
+    <li class="menu">
+      <a onclick="checkClickFunc()" href="/#menu">Menu</a>
+    </li>
+    <li class="gallery">
+      <a onclick="checkClickFunc()" href="#">Gallery</a>
+    </li>
+    <li class="book-an-event">
+      <a onclick="checkClickFunc()" href="#">Book an Event</a>
+    </li>
+    <li class="contact-us">
+      <a onclick="checkClickFunc()" href="#">Contact Us</a>
+    </li>
+    <li class="hidden-logo">
+      <img src="{% static 'media\logo.png' %}" />
+      <br />
+      <label>Cake o' Clock Cafe</label>
+    </li>
+  </ul>
+  <ul class="socmed-icon">
+    <li>
+      <a href="https://www.facebook.com/cakeoclockcafe">
+        <img src="{% static 'media\fb.png' %}" />
+      </a>
+      <a href="https://www.instagram.com/cakeoclockcafe/">
+        <img src="{% static 'media\insta.png' %}" />
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!--Fixed Navbar & Mobile View Navbar-->
+<nav class="fixed-navbar">
+  <div>
+    <a href="/">
+      <img src="{% static 'media\logo.png' %}" class="logo-pic" />
+      <label class="logo"> Cake o' Clock Cafe </label>
+    </a>
+    <input type="checkbox" id="check" />
+    <label for="check" class="open-menu">
+      <i class="fas fa-bars"> </i>
+    </label>
+  </div>
+  <ul class="pages-fixed" id="main-nav-2">
+    <li class="home active"><a href="/">Home</a></li>
+    <li class="blog"><a href="/#blog">Blog</a></li>
+    <li class="menu"><a href="/#menu">Menu</a></li>
+    <li class="gallery"><a href="#">Gallery</a></li>
+    <li class="book-an-event"><a href="#">Book an Event</a></li>
+    <li class="contact-us"><a href="#">Contact Us</a></li>
+    <li class="hidden-logo">
+      <img src="{% static 'media\logo.png' %}" />
+      <label class="logo">Cake o' Clock Cafe</label>
+    </li>
+  </ul>
+  <ul class="socmed-icon">
+    <li>
+      <a href="https://www.facebook.com/cakeoclockcafe">
+        <img src="{% static 'media\fb2.png' %}" />
+      </a>
+      <a href="https://www.instagram.com/cakeoclockcafe/">
+        <img src="{% static 'media\insta2.png' %}" />
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{%block content %}
+{% endblock %}

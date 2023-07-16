@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap");
+@font-face {
+  font-family: "Poppins";
+  src: url(./../fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "Dancing Script";
+  src: url(./../fonts/DancingScript-Regular.ttf);
+}
+@font-face {
+  font-family: "Lobster";
+  src: url(./../fonts/Lobster-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f1ea;
+}
+
+nav {
+  background-color: transparent;
+  height: 80px;
+  width: 100%;
+}
+
+img.logo-pic {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-weight: bold;
+  float: left;
+}
+
+.seperate-menu-category {
+  font-weight: bold;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-weight: bold;
+  float: left;
+}
+
+label.logo:hover {
+  cursor: pointer;
+}
+
+nav ul {
+  float: left;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin-top: 15px;
+  padding: 5px;
+  transition: all 0.5s;
+}
+
+nav ul li a {
+  color: white;
+  font-family: "Poppins";
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.pages li.active,
+.pages a:hover {
+  color: #b65472;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.pages li.active a {
+  color: #b65472;
+  transition: all 0.5s;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: -100%;
+  transition: all 1s;
+  z-index: 1;
+  background-color: #b65472;
+  min-height: 13vh;
+}
+
+.fixed-navbar.active {
+  top: 0;
+  transition: all 0.5s;
+}
+
+.pages-fixed a {
+  color: white;
+  transition: all 0.5s;
+}
+
+.pages-fixed li.active,
+.pages-fixed a:hover {
+  color: #bababa;
+  transition: all 0.5s;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.pages-fixed li.active a {
+  color: #bababa;
+  transition: all 0.5s;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.open-menu {
+  position: absolute;
+  color: var(--color1);
+  cursor: pointer;
+  font-size: 3rem;
+  display: none;
+  margin-left: 90%;
+  margin-top: 1%;
+  color: white;
+}
+
+#check {
+  display: none;
+}
+
+.hidden-logo {
+  display: none;
+}
+
+.chatbot-btn {
+  background-image: url(./../media/chatbot.png);
+  position: fixed;
+  width: 79px;
+  height: 83px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.chatbot-btn:hover {
+  background-image: url(./../media/chatbot.png);
+  position: fixed;
+  width: 214px;
+  height: 83px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+  }
+
+  .logo-pic {
+    width: 10%;
+  }
+
+  .home-logo {
+    margin: 0 5%;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .pages {
+    z-index: 2;
+    width: 60%;
+    height: 100vh;
+    position: fixed;
+    background-color: #b65472;
+    top: 0;
+    left: -100%;
+    transition: all 0.5s;
+    border-radius: 20px;
+  }
+
+  .pages-fixed {
+    z-index: 2;
+    width: 60%;
+    height: 100vh;
+    position: fixed;
+    background-color: #b65472;
+    top: 0;
+    left: -100%;
+    transition: all 0.5s;
+    border-radius: 20px;
+  }
+
+  label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-weight: bold;
+    float: left;
+  }
+
+  .socmed-icon img {
+    margin-bottom: 200px;
+  }
+
+  .hidden-logo {
+    display: block;
+    margin-top: 150px;
+    margin-right: 50px;
+    line-height: 80px;
+  }
+
+  .hidden-logo label {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  nav ul li {
+    display: block;
+    line-height: 30px;
+    text-align: right;
+  }
+
+  nav ul li a {
+    padding: 10px;
+    color: white;
+    transition: all 0.5s;
+  }
+
+  .open-menu {
+    display: block;
+  }
+
+  .pages li.active,
+  .pages a:hover {
+    color: #bababa;
+    background: none;
+    transition: all 0.5s;
+  }
+
+  .pages li.active a {
+    color: #bababa;
+    background: none;
+    transition: all 0.5s;
+  }
+
+  #check:checked ~ .pages {
+    left: 0;
+  }
+
+  #menu-items label.menu-label{
+    font-size: 25px;
+  }
+
+}
+
+.navbar {
+  background-color: #f1f1f1;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.nav-list li a {
+  margin-top: 50px;
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+
+.nav-list li a:hover {
+  color: rgba(0, 0, 0, 0.367);
+}
+
+.socmed-icon {
+  display: flex;
+  float: right;
+  height: 80px;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.socmed-icon img {
+  width: 20%;
+}
+
+.welcome {
+  position: relative;
+  color: white;
+  font-size: 96px;
+  text-align: center;
+  font-family: "Manrope";
+}
+
+.home-logo {
+  margin: 0 25%;
+}
+
+.line {
+  color: #f4f1ea;
+  width: 50%;
+  border-width: 5px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.welcome label {
+  position: relative;
+  color: white;
+  font-size: 24px;
+  margin: auto;
+  text-align: center;
+}
+
+.welcome li label {
+  position: relative;
+}
+
+.welcome li {
+  line-height: 80px;
+}
+
+.touch {
+  position: relative;
+  font-family: "Dancing Script";
+  font-size: 36px;
+}
+
+.quote img {
+  position: relative;
+  width: 2%;
+}
+
+.blog-image {
+  height: 100%;
+  width: 100%;
+}
+
+.blog-link {
+  text-decoration: none;
+  color: #b65472;
+}
+
+#home {
+  height: 1150px;
+  margin: 0;
+  padding: 0;
+  background-image: url(./../media/home_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  word-spacing: normal;
+}
+
+#blog {
+  height: 1000px;
+  background-color: #f4f1ea;
+}
+
+#blog h1 {
+  text-align: center;
+  padding: 25px;
+}
+
+#menu {
+  height: 1000px;
+  top: 80px;
+  background-color: #f4f1ea;
+  text-align: center;
+}
+
+#menu h1 {
+  font-weight: bold;
+  font-family: "Poppins";
+}
+
+#menu h2 ul li {
+  display: inline-block;
+}
+
+#menu h2 ul li button {
+  background: transparent;
+  border: none;
+}
+
+.blog-image {
+  object-fit: cover;
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  position: relative;
+}
+
+.card {
+  background-color: black;
+}
+
+#menu .categories {
+  font-family: "Poppins";
+}
+
+#menu .categories button {
+  transition: ease-in-out 0.4s;
+}
+
+#menu .categories button:hover {
+  color: #b65472;
+  transition: ease-in-out 0.4s;
+}
+
+#menu li.selected-category button {
+  color: #b65472;
+  font-weight: bold;
+  transition: ease-in-out 2s;
+}
+
+#menu #menu-items {
+  margin: auto;
+  background-image: url("./../media/menu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3%;
+  width: 75%;
+  overflow-y: auto;
+}
+
+.menu-label {
+  margin-top: 5%;
+  margin-right: 25%;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+
+.menu-label:hover{
+  color: #b65472;
+  opacity: 1;
+  transform: all 0.7s;
+}
+
+.menu-image {
+  margin-top: 5%;
+  max-width: 75%;
+  height: auto;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+#silogs{
+  transition: all 0.5s;
+}
+
+#coffees{
+  transition: all 0.5s;
+}
+
+#pastas{
+  transition: all 0.5s;
+}
+
+#teas{
+  transition: all 0.5s;
+}
